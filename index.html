@@ -1,87 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UFT-8" />
+    <meta name="viewport" content="width=device-width, intitial-scale=1.0" />
+
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+      integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <div class="weather-app-wrapper">
+      <div class="container">
         <div class="weather-app">
-          <form id="search-form" class="mb-3">
+          <form class="search-form" id="search-form">
             <div class="row">
               <div class="col-9">
                 <input
                   type="search"
                   placeholder="Type a city.."
-                  class="form-control"
-                  id="city-input"
+                  autofocus="on"
                   autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
                 />
               </div>
               <div class="col-3">
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-primary w-100"
+                  class="form-control btn btn-primary shadow-sm"
                 />
               </div>
             </div>
           </form>
-          <div class="overview">
-            <h1 id="city"></h1>
-            <ul>
-              <li>Last updated: <span id="date"></span></li>
-              <li id="description"></li>
-            </ul>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="clearfix weather-temperature">
-                <img src="" alt="Clear" id="icon" class="float-left" />
-                <div class="float-left">
-                  <strong id="temperature"></strong
-                  ><span class="units"
-                    ><a href="#" id="celsius-link" class="active">°C</a> |
-                    <a href="#" id="fahrenheit-link">°F</a></span
-                  >
-                </div>
-              </div>
+        
+      <h1> <span>
+        <p id="city">Boulder,
+        </p>
+        <p id="country"> USA
+          </p>
+      </span>
+          
+      </h1>
+      <ul>
+        <li>
+          <span id="current-date">Monday</span>
+          <span id="current-time">11:08</span>
+        </li>
+        <li>
+          Sunny 
+          <p id="weather-description" class = "weather-description"> </p>
+        </li>
+      </ul>
+      <div class="row">
+        <div class="col-6">
+          <div class="clearfix">
+            <img
+              src=""
+              alt="Sunny icon"
+              class="weather-icon float-left"
+              id = "today-img"
+            />
+            <div class="float-left">
+                <span class="Temperature" id="Temperature">21</span
+                  ><span class="units">
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
+                  </span>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
-            </div>
           </div>
-          <div class="row weather-forecast" id="forecast"></div>
         </div>
-        <small>
-          <a
-            href="https://github.com/lillystumb/Weather-App.git"
-            target="_blank"
-            >Open-source code</a
-          >
-          by Lilly Stumb 
-        </small>
+        <div class="col-6">
+          <ul>
+            <li>
+              Precipitation: 3%
+              <p id = "Precipitation"> </p>
+            </li>
+            <li>
+              Humidity: 16%
+              <p id = "Humidity"> </p>
+            </li>
+            <li>
+              Wind: 7 km/h
+              <p id = "Wind"> </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <script src="app.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
